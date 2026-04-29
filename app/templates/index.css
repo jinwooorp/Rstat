@@ -1,20 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
 body {
-    background-color: #efefef;
+  background: linear-gradient(135deg, #eaf6f6, #d9f0f2);
+  color: #222;
+}
+.logo {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.logo::first-letter {
+  color: #38b2ac;
+}
+
+/* 네비 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
+  align-items: center;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #444;
+  justify-content: center; 
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* 메인 */
+.hero {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  height: calc(100vh - 80px);
+  padding: 40px 60px;
+  margin-top: 0;
+}
+
+/* 왼쪽 */
+.hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero-left h1 span {
+  color: #38b2ac;
+}
+
+.subtitle {
+  margin: 20px 0;
+  color: #666;
+}
+
+/* 카드 */
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    text-align: center;
-    width: 370px;
-    height: 230px;
-
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  width: 180px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+   transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
+}
+
+.card h2 {
+  margin: 10px 0;
 }
 
 .card:hover {
@@ -34,21 +109,40 @@ body {
     box-shadow: 0 10px 25px rgba(30, 144, 255, 0.35);
 }
 
-.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100dvh;
+.badge {
+  background: #ffe5c2;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: #ccc;
+/* 하단 메타 */
+.meta {
+  margin-top: 20px;
+  color: #888;
+  font-size: 14px;
 }
 
-.value {
-    font-size: 2.2rem;
-    /* 숫자 + 이모지 크게 */
-    margin-top: 10px;
+/* 오른쪽 */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-right img {
+  width: 90%;
+  max-width: 500px;
+}
+
+.next{
+    height:100vh;
+    padding:60px;
+    background:#fff;
+}
+
+.next h1{
+     display: flex;
+     justify-content: center;
 }

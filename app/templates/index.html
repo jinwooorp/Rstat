@@ -1,26 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/mikuFvi.ico">
-    <link rel="stylesheet" href="./index.css">
-    <title>Rstat</title>
-    
+  <meta charset="UTF-8" />
+  <title>Rstat</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" href="./img/mikuFvi.ico">
 </head>
 <body>
-    <div class="wrapper">
+  <header class="navbar">
+    <div class="logo">Rstat</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Live</a>
+      <a href="#">History</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <!-- 왼쪽 -->
+    <div class="hero-left">
+      <h1>
+        Live Temperature & <br />
+        <span>Humidity</span>
+      </h1>
+
+      <p class="subtitle">만든 놈 방온도 좀 보세요!</p>
+
+      <div class="cards">
         <div class="card temp-card">
-            <h2>평균 온도</h2>
-            <hr>
-            <div class="value">🌡️ 23</div>
+          <p>Temperature</p>
+          <h2>24.6°C</h2>
+          <span class="badge">Moderate</span>
         </div>
 
-        <div class="card humid-card">
-            <h2>평균 습도</h2>
-            <hr>
-            <div class="value">💧 14</div>
+        <div class="card humid-card ">
+          <p>Humidity</p>
+          <h2>58%</h2>
+          <span class="badge">Moderate</span>
         </div>
+      </div>
+  
+      <div class="meta">
+        <span>My Room, Korea</span>
+        <span>2024.05.25 14:30</span>
+      </div>
     </div>
+
+     <div class="hero-right">
+        <img src="img/welcomeMikuTest.png">
+      </div>
+  </section>
+
+  <section class="next">
+    <h1>그래프랑 온습도 칸</h1>
+  </section>
 </body>
 </html>
