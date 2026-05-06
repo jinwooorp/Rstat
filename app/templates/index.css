@@ -9,25 +9,30 @@ body {
   background: linear-gradient(135deg, #eaf6f6, #d9f0f2);
   color: #222;
 }
-.logo {
+.site-logo {
   font-size: 48px;
   line-height: 1.2;
   font-weight: 700;
 }
 
-.logo::first-letter {
+.site-logo::first-letter {
   color: #38b2ac;
 }
 
 /* 네비 */
-.navbar {
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
   justify-content: space-between;
   padding: 20px 60px;
   align-items: center;
+  background: rgba(234, 246, 246, 0.75);
+  backdrop-filter: blur(3px);
 }
 
-.navbar nav a {
+.site-nav a {
   margin-left: 20px;
   text-decoration: none;
   color: #444;
@@ -46,8 +51,34 @@ body {
   margin-top: 0;
 }
 
+.hero--secondary {
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  height: auto;
+}
+
+.anchor-offset {
+  scroll-margin-top: 120px;
+}
+
+.hero--secondary h1{
+  text-align: center;
+}
+
+/* 온습도 mid*/
+.hero__mid{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
 /* 왼쪽 */
-.hero-left {
+.hero__left {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -56,60 +87,91 @@ body {
   z-index: 10;
 }
 
-.hero-left h1 {
+.hero__left h1 {
   font-size: 48px;
   line-height: 1.2;
   font-weight: 700;
 }
 
-.hero-left h1 span {
+.hero__left h1 span {
   color: #38b2ac;
 }
 
-.subtitle {
+.hero__subtitle {
   margin: 20px 0;
   color: #666;
 }
 
 /* 카드 */
-.cards {
+.stat-cards {
   display: flex;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 40px;
+  margin-top: 0;
 }
 
-.card {
-  background: white;
-  padding: 20px;
+.charts {
+  width: min(1100px, 100%);
+  padding: 16px 0 32px;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.chart {
+  background: #fff;
   border-radius: 16px;
-  width: 180px;
+  padding: 16px 20px 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-   transition: transform 0.25s ease, box-shadow 0.25s ease;
-    cursor: pointer;
 }
 
-.card h2 {
+.chart__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 12px;
+}
+.charts > h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.charts canvas {
+  width: 100%;
+  height: 220px;
+}
+
+.stat-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.stat-card h2 {
   margin: 10px 0;
 }
 
-.card:hover {
+.stat-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.temp-card:hover {
+.stat-card--temp:hover {
     background-color: #fff3e0;
     color: #e65100;
     box-shadow: 0 10px 25px rgba(255, 140, 0, 0.35);
 }
 
-.humid-card:hover {
+.stat-card--humid:hover {
     background-color: #e3f2fd;
     color: #0d47a1;
     box-shadow: 0 10px 25px rgba(30, 144, 255, 0.35);
 }
 
-.badge {
+.stat-badge {
   background: #ffe5c2;
   padding: 4px 10px;
   border-radius: 999px;
@@ -117,23 +179,69 @@ body {
 }
 
 /* 하단 메타 */
-.meta {
+.hero__meta {
   margin-top: 20px;
   color: #888;
   font-size: 14px;
 }
 
 /* 오른쪽 */
-.hero-right {
+.hero__right {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-right img {
+.hero__right img {
   width: 90%;
   max-width: 500px;
+}
+
+.site-footer {
+  background: #0f4f52;
+  color: #e6f7f7;
+  padding: 24px 60px 32px;
+}
+
+.footer__content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.footer__comment {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__label {
+  font-weight: 700;
+}
+
+.footer__input {
+  min-height: 64px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: #e6f7f7;
+  resize: vertical;
+}
+
+.footer__input::placeholder {
+  color: rgba(230, 247, 247, 0.7);
+}
+
+.footer__meta {
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
 
 .next{
